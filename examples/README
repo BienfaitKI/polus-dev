@@ -1,0 +1,37 @@
+This folder contains
+
+(i)   A sub-folder enclosing  a bunch of comma separated value (csv) files.
+      Each of these files encloses geometrical input features defined in atomic local 
+      frames (ALF)  and topological properties (atomic energy and multipole moments)
+      of all the atoms in 2000 conformers of ethanol.\
+
+(ii)  A python script that import polus modules and executes several tasks intended
+      to prepare training, validation and test sets for use in FEREBUS, a regression
+      engine developed in the Popelier group. This script:\
+
+      (1) Corrects atomic energies so that they sum up exactly to the wave function
+          energy of the system.\
+
+      (2) Specifies the sizes of training sets, going from 100 to 2000 geometries. \
+
+      (3) Defines the path to the output directory. \
+
+      (4) Removes potential extreme outliers from the dataset. These are geometries
+          that fall away from mean+-4*sigma in the distributions of atomic energies.\
+
+      (5) Removes geometries that fail on the electron density recovery test.\
+
+      (6) Identifies excluded geometries.\
+
+      (7) Carries out a diversity-aware selection procedure to identify the most 
+          structurally unique geometries in the dataset.\
+
+      (8) Writes the training, validation and test sets in csv files.\
+
+This example task can be executed by running the script in the polus environment:\
+
+python script.py \
+
+For larger datasets, we recommend that a job script be written and submitted to a 
+compute node. This is because step (7) above quikcly becomes very time-consuming and
+memory-greedy.\
