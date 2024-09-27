@@ -28,7 +28,7 @@ exclude_job = EXCLUDED(systemName="ETL",fOrigStart=2,fFiltStart=0,inputDir="inpu
 exclude_job.WriteExcludedGeomIDs()
 
 # Diversity-based sampling
-div_sampling =Sampler(systemName="ETL",chunkSize=1000,writeFerebusInputs=True,weightsVector="HL1:1",rotateTraj=True,rotMethod="KU",refGeom=None,parallel=True,autoStop=False,outputDir="OUTPUT-ETL",filename="ETL-SAMPLE-5000.xyz",sampleSize=TRAIN.copy())
+div_sampling =Sampler(systemName="ETL",chunkSize=1000,writeFerebusInputs=True,weightsVector="HL1:1",rotateTraj=True,rotMethod="KU",refGeom=None,parallel=True,autoStop=False,outputDir="OUTPUT-ETL",filename="ETL-SAMPLE-2000.xyz",sampleSize=TRAIN.copy())
 div_sampling.Execute()
 
 
