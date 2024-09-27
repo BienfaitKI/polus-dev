@@ -1,7 +1,7 @@
 ABOUT
 -----
 POLUS is a data processing package integrated in the workflow of 
-the machine-learned force field FFLUX. The package mainly work on
+the machine-learned force field FFLUX. The package mainly works on
 output from molecular dynamics simulators and electronic structure
 calculators. It handles a list of input files, including .csv, .txt,
 and .xyz files. POLUS performs various tasks, such as (a) the extraction
