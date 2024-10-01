@@ -1,7 +1,7 @@
 import setuptools
 from glob import glob
 
-# Will load the README.md file into a long_description of the package
+# Will load the README file into a long_description of the package
 with open("README", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 # Load the requirements file
