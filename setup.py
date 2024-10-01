@@ -13,7 +13,7 @@ if __name__ == "__main__":
         version='1.0.0',
         author='Bienfait Isamura',
         author_email='bienfait.isamura@postgrad.manchester.ac.uk',
-        description="A data processing package compatible with the machine-learned force field FFLUX"
+        description="A data processing package compatible with the machine-learned force field FFLUX",
         long_description=long_description,
         long_description_content_type="text/markdown",
         url='https://github.com/BienfaitKI/polus-dev',
