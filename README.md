@@ -5,14 +5,14 @@ output from molecular dynamics simulators and electronic structure calculators. 
 and .xyz files. 
 
 POLUS performs various tasks, such as: 
-- Extraction of representative subsets of geometries based on structural diversity
-- Correction of atomic IQA energies following a penalised stakeholder master equation,
-- Identification of spatially equivalent atoms based on the distribution of local properties along a dynamic path
+- Extraction of representative subsets of geometries based on structural diversity.
+- Correction of atomic IQA energies following a penalised stakeholder master equation.
+- Identification of spatially equivalent atoms based on the distribution of local properties along a dynamic path.
 - Stratification of datasets based on the distribution of both atomic and molecular properties.
 
 # Instalation
 
-POLUS can be easily installed by following these steps;
+POLUS can be easily installed by following these steps:
 
 1. Download or clone a copy of the copy. For the moment, we have only
 made available the development version called "polus-dev".
@@ -25,9 +25,11 @@ We recommend that the package be installed in a dedicated virtual environment.
 Assuming the name of the environment is "polus", it is easy to create one following
 one of the two solutions:
 
-1.  ```python -m venv ~/.venv/polus```
+-  ```python -m venv ~/.venv/polus```
 
-2. ```conda create --name polus```
+OR
+
+- ```conda create --name polus```
 
 In either case, your virtual environment can be activated as follows:
 
