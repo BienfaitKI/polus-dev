@@ -10,7 +10,7 @@ POLUS performs various tasks, such as:
 - Identification of spatially equivalent atoms based on the distribution of local properties along a dynamic path.
 - Stratification of datasets based on the distribution of both atomic and molecular properties.
 
-# Instalation
+# Installation
 
 POLUS can be easily installed by following these steps:
 
@@ -25,17 +25,17 @@ We recommend that the package be installed in a dedicated virtual environment.
 Assuming the name of the environment is "polus", it is easy to create one following
 one of the two solutions:
 
--  ```python -m venv ~/.venv/polus```
+1.  ```python -m venv ~/.venv/polus```
+
+2. ```source ~/.venv/polus/bin/activate```
 
 OR
 
-- ```conda create --name polus```
-
-In either case, your virtual environment can be activated as follows:
-
-1.  ```source ~/.venv/polus/bin/activate```
+1. ```conda create --name polus```
 
 2. ```conda activate polus```
+
+
 
 # Examples
 
