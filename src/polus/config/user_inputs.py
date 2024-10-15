@@ -9,7 +9,7 @@ cwd         = os.getcwd()
 elements    = ["C","H","O","N","P","S"]
 prop_itls   = ["i","q"]
 
-def read_atom_names(input_dir):
+def read_atom_names(input_dir: str) -> list:
     if os.path.isdir(input_dir):
         files = os.listdir(input_dir)
         atoms = []

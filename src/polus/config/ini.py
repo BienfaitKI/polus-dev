@@ -7,7 +7,7 @@ global keys
 keys                = ["atoms","name","props","natoms","method","train","val","test","iqa_filt","q00_filt"]
 mandatory_sections  = ["system","sampling","filtering"]
 
-def check_config(root):
+def check_config(root: str) -> None:
     config_file = os.path.join(root,"polus.ini")
     if os.path.isfile(config_file):
         config=ConfigParser()
