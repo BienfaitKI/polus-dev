@@ -6,7 +6,7 @@ from polus.config.user_inputs import read_atom_names
 from polus.files.inputs import GetInputBasename
 
 
-def GetRandInFile(InDir):
+def GetRandInFile(InDir: str) -> str:
     """
     This function reads a random file from the input Directory
     
@@ -23,7 +23,7 @@ def GetRandInFile(InDir):
         RaiseError(message="Cannot find input directory")
     return InFile
 
-def IsCSV(file_):
+def IsCSV(file_: str) -> bool:
     """
     This function checks if a file has comma separated content
     
@@ -32,7 +32,7 @@ def IsCSV(file_):
     """
     return file_.endswith(".csv")
 
-def get_FInFile_IO_Dirs(root,input_dir,output_dir):
+def get_FInFile_IO_Dirs(root: str, input_dir: str, output_dir: str) -> tuple[str, str, str, list[object] | None]:
     default_input_dir = os.path.join(root,"input_files")
     cmd_args          = read_cmd_args()
     config_details    = read_config()

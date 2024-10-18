@@ -9,7 +9,7 @@ cwd         = os.getcwd()
 elements    = ["C","H","O","N","P","S","F","Cl"]
 prop_itls   = ["i","q"]
 
-def ReadAtomLabels(input_dir):
+def ReadAtomLabels(input_dir: str) -> list[object]:
     """
     This function reads the atom labels from the input .cvs filenames.
     
@@ -35,7 +35,7 @@ def ReadAtomLabels(input_dir):
 
     return atoms
 
-def GetProps(allProps=False,momentRank=4):
+def GetProps(allProps: bool = False, momentRank: int = 4) -> list[str]:
     """
     This function generates the list of possible target property names.
     
@@ -57,7 +57,7 @@ def GetProps(allProps=False,momentRank=4):
         props = ["iqa"]
     return props
 
-def read_config():
+def read_config() -> tuple[str, list[object], list[object], str, list[int], list[int], list[int], float, float]:
     """
     This function (depricated) used to read the content of a user-supplied configuration file.
     
@@ -96,7 +96,7 @@ def read_config():
     return system_name, atoms, props, method, train, val, test, iqa_filt, q00_filt
 
 
-def read_cmd_args():
+def read_cmd_args() -> tuple[str | None, str | None, list[str] | None, list[str] | None, str | None, str | None, list[int] | None, list[int] | None, list[int] | None, int, str | None]:
     """
     This function (depricated) used to read command line arguments.
     

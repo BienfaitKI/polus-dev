@@ -10,7 +10,7 @@ from polus.utils.logging import RaiseError
 from polus.utils.read_module import check_input_files, read_job_details
 from datetime import datetime
 
-def PrintJobDetails():
+def PrintJobDetails() -> None:
     now       = datetime.now()
     date      = now. strftime("%A %d %B %Y")
     time      = now. strftime("%H:%M:%S")
@@ -35,7 +35,7 @@ def PrintJobDetails():
     #print("*"*82)
     #print(f"{'       Task'} {'Duration(s)':>70}")
 
-def PrintOnTerminal(msg=None,duration=None,msgLength=None):
+def PrintOnTerminal(msg: str | None = None, duration: float | None = None, msgLength: str | None = None) -> None:
     if isinstance(msg,str):
         print(f"POLUS: {msg}",end="")
     elif isinstance(duration,float) and isinstance(msgLength,int):
@@ -44,7 +44,7 @@ def PrintOnTerminal(msg=None,duration=None,msgLength=None):
     else:
         RaiseError(message=" Program cannot print information on standard output terminal ")
 
-def print_welcome_message():
+def print_welcome_message() -> None:
     print ("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     print ("     @@@@@@@@@@@@        &        Welcome  to  POLUS        &        @@@@@@@@@@@@     ")
     print ("     @@@@@@@@@@@@       &&&       Welcome  to  POLUS       &&&       @@@@@@@@@@@@     ")
@@ -63,7 +63,7 @@ def print_welcome_message():
     print (" ")
     time.sleep(2)
 
-def PrintGBMessage():
+def PrintGBMessage() -> None:
     print ("")
     print ("THANKS FOR USING POLUS")
     print ("*"*81)
@@ -72,7 +72,7 @@ def PrintGBMessage():
     print ("*"*81)
     print (" ")
 
-def print_goodbye_message():
+def print_goodbye_message() -> None:
     print ("")
     print ("*"*81)
     print ("GOODBYE")
@@ -81,7 +81,7 @@ def print_goodbye_message():
     print (" For more details: bienfait.isamura@postgrad.manchester.ac.uk")
     print ("*"*81)
     print (" ")
-def print_help():
+def print_help() -> None:
     print (" ")
     print ("    This code performs various data sampling tasks (from any reference data) into training and validation sets.")
     print ("    Available sampling techniques include:")
@@ -130,10 +130,10 @@ def print_help():
     print ("    For more details: bienfait.isamura@postgrad.manchester.ac.uk")
     print ("")
 
-def print_version():
+def print_version() -> None:
     print ("    SRS version 1.0")
     
-def print_input_details():
+def print_input_details() -> None:
     list_files = check_input_files()
     print ("    File                                   Status")
     print ("    ----                                   ------")
@@ -151,8 +151,8 @@ def print_input_details():
             else:
                 print (f"    {atoms[i-1]}_file                                NOT FOUND")
 
-def print_job_details(system_name,strat_method,tr_set_size,ival_set_size,\
-                      eval_set_size,list_atoms,list_props):
+def print_job_details(system_name: str, strat_method: str, tr_set_size: int, ival_set_size: int,\
+                      eval_set_size: int, list_atoms: list[str], list_props: list[str]) -> None:
     
     print("JOB DETAILS")
     print("-----------")
