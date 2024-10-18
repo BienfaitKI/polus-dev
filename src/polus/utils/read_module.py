@@ -2,7 +2,7 @@ import os
 import sys
 
 
-def check_file(path):
+def check_file(path: str) -> bool:
     """
     This function checks the existence of a file
     
@@ -17,7 +17,7 @@ def check_file(path):
         
     return exist
 
-def get_filesize(filename, unit="bytes"):
+def get_filesize(filename: str, unit: str = "bytes") -> None:
     """
     This function evaluates and returns the size of a file
     
@@ -43,7 +43,7 @@ def get_filesize(filename, unit="bytes"):
         
     return size
 
-def check_property(filename,prop="iqa"):
+def check_property(filename: str, prop: str = "iqa") -> bool:
     """
     This function checks the existence of the data associated with the target physical properties. It basically reads 
     the file's header and locate a column that matches the property's name.
@@ -67,7 +67,7 @@ def check_property(filename,prop="iqa"):
 
     return found
         
-def readfile(filename, prop="iqa"):
+def readfile(filename: str, prop: str = "iqa"):
     """
     This function reads the content of a file and returns many components including the header, the file body, a vector of target property values,
     feature column indices, property column indicie and the indices of the remaining columns (possibly hosting data for other physical properties). 
@@ -132,7 +132,7 @@ def readfile(filename, prop="iqa"):
             
     return header, file_body, prop_vector, features_indices, prop_index, all_prop_indices
 
-def read_job_details():
+def read_job_details() -> tuple[str, str, int, int, int, list[str], list[str], str, str, object]:
     system_name = None
     strat_method = None
     tr_set_size = None
@@ -204,7 +204,7 @@ def read_job_details():
     return result
 
 
-def check_input_files():
+def check_input_files() -> list[bool]:
     #TODO: should take as input the actual input dir
     list_exists = []
     job_detail_file = "JOB_DETAILS.txt"
@@ -228,7 +228,7 @@ def check_input_files():
         list_exists.append(False)
 
     return list_exists
-def SAR_goodbye():
+def SAR_goodbye() -> None:
     print (" ")
     print (" Thanks for using POLUS (Sampling Algorithms for Regression).")
     print (" For more details: bienfait.isamura@postgrad.manchester.ac.uk")

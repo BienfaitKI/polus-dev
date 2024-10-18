@@ -10,7 +10,7 @@ import numpy as np
 import math
 import statistics
 
-def sturges(population):
+def sturges(population: list[object]) -> int:
     population_size   = len(population)
     number_of_bins    = math.ceil(1+math.log(population_size,2))
     
@@ -19,7 +19,7 @@ def sturges(population):
         
     return number_of_bins
 
-def doane(population):
+def doane(population: list[object]) -> int:
     pop_size       = len(population)
     mean           = statistics.mean(population)
     g1_numer       = 0
@@ -44,7 +44,7 @@ def doane(population):
         
     return number_of_bins
 
-def scott(population):
+def scott(population: list[object]) -> int:
     population_size   = len(population)
     std               = statistics.stdev(population)
     bin_width         = 3.49*std/(np.power(population_size,1/3))
@@ -57,7 +57,7 @@ def scott(population):
         
     return number_of_bins
 
-def fd(population):
+def fd(population: list[object]) -> int:
     population_size   = len(population)
     q3, q1            = np.percentile(population, [75 ,25])
     iqr               = q3 - q1
@@ -73,7 +73,7 @@ def fd(population):
         
     return number_of_bins
 
-def rice(population):
+def rice(population: list[object]) -> int:
     population_size   = len(population)
     number_of_bins    = math.ceil(2*np.power(population_size,1/3))
     
@@ -82,7 +82,7 @@ def rice(population):
         
     return number_of_bins
 
-def EpB(population):
+def EpB(population: list[object]) -> int:
     population_size   = len(population)                
     number_of_bins    = math.ceil(np.power(2*population_size,2/5))
     
@@ -91,7 +91,7 @@ def EpB(population):
         
     return number_of_bins    
 
-def get_strat_properties(population,strat):
+def get_strat_properties(population: list[object], strat: str | int) -> tuple[int, None, None, None, None, None, None, None, None]:
     
     # Return number_of_bins, range, IQR, min, max,
     # Std, median, mean, kurtosis

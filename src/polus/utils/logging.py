@@ -5,24 +5,24 @@ import logging
 global logger
 logger = logging.getLogger(__name__)
 
-def RaiseError(message):
+def RaiseError(message: str) -> None:
     if (isinstance(message,str)):
         logger.error(msg=message)
         sys.exit()
     else:
         InvalidLogMessage()
 
-def RaiseWarning(message):
+def RaiseWarning(message: str) -> None:
     if (isinstance(message,str)):
         logger.warning(msg=message)
     else:
         InvalidLogMessage()
 
-def PrintInfo(message):
+def PrintInfo(message: str) -> None:
     if (isinstance(message,str)):
         logger.info(msg=message)
     else:
         InvalidLogMessage()
 
-def InvalidLogMessage():
+def InvalidLogMessage() -> None:
     logger.warning(msg="Invalid logging message")
